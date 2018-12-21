@@ -20,8 +20,8 @@ public class UserAuthenticationProvider implements AuthenticationProvider {
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String login = authentication.getName();
-        String password = authentication.getCredentials().toString();
-//        String password = DigestUtils.md5DigestAsHex();
+//        String password = authentication.getCredentials().toString();   //plain text bez hashowania
+        String password = DigestUtils.md5DigestAsHex(authentication.getCredentials().toString().getBytes());
 
         if(userService.authenticate(login, password)){
 
