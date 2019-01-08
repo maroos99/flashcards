@@ -11,12 +11,12 @@
 </head>
 <body>
 <div class = "container">
-    <h1>Welcome <span sec:authentication="name"></span> in Your Own Flashcards!</h1>
+    <h1>All flashcard sets:</h1><br>
+
     <br><br>
-    <h3>Flashcard of the day:  </h3><br>
-    <h4><a href = "#" th:href="default-flashcards">Default flashcards</a></h4><br>
-    <h4><a href = "#" th:href="all-flashcards">All your's flashcards</a></h4><br>
-    <h4><a href = "#" th:href="all-flashcard-sets">Edit sets of your's flashcards</a></h4>
+
+    <h4><a href = "#" th:href="logged-user">Back</a></h4><br>
+
 </div>
 </body>
 </html>

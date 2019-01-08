@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import pl.msz.flashcards.dto.UserRegistrationDto;
 import pl.msz.flashcards.service.UserService;
 
-import java.util.Locale;
 import java.util.Map;
 
 @Controller
@@ -40,4 +39,6 @@ public class UserController {
 
         return "home";
     }
+
+
 }

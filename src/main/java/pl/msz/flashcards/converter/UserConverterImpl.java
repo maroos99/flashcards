@@ -13,7 +13,7 @@ public class UserConverterImpl implements UserConverter{
         User user = new User();
         user.setLogin(userRegistrationDto.getLogin());
 //        user.setPassword(userRegistrationDto.getPassword());  //plain text bez szyfrowania
-        user.setPassword(DigestUtils.md5DigestAsHex(userRegistrationDto.getPassword().getBytes()));   //szyfrowanie
+       user.setPassword(DigestUtils.md5DigestAsHex(userRegistrationDto.getPassword().getBytes()));   //szyfrowanie
         user.setEmail(userRegistrationDto.getEmail());
         user.setName(userRegistrationDto.getName());
         user.setAge(userRegistrationDto.getAge());
