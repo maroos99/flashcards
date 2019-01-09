@@ -11,12 +11,16 @@
 </head>
 <body>
 <div class = "container">
-    <h1>Welcome <span sec:authentication="name"></span> in Your Own Flashcards!</h1>
+    <h1>Single Flashcard</h1><br>
+
+    <h3><span th:text="${flashcard.word}"></span></h3>
+    <h3><span th:text="${flashcard.wordTranslation}"></span></h3>
+
     <br><br>
-    <h3>Flashcard of the day:  </h3><br>
-    <h4><a href = "#" th:href="default-flashcards">Default flashcards</a></h4><br>
-    <h4><a href = "#" th:href="user-flashcards">All your's flashcards</a></h4><br>
-    <h4><a href = "#" th:href="all-flashcard-sets">Edit sets of your's flashcards</a></h4>
+    <h4><a href = "#" th:href="@{'/single-flashcard/' + ${currentId}}">Next flashcard</a></h4><br>
+    <h4><a href = "#" th:href="@{/all-flashcard-sets}">Back</a></h4><br>
+
+
 </div>
 </body>
 </html>

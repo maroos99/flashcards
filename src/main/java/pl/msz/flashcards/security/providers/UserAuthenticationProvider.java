@@ -1,4 +1,4 @@
-package pl.msz.flashcards.security.user_database_provider;
+package pl.msz.flashcards.security.providers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;

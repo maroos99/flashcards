@@ -29,4 +29,33 @@ public class FlashcardServiceImpl implements FlashcardService{
 
         return flashcardsDto;
     }
+
+    @Override
+    public List<FlashcardDto> findAllByLogin(String login) {
+        List<FlashcardDto> flashcardsByLoginDto = new ArrayList<>();
+        Iterable<Flashcard> flashcardsByLogin = flashcardRepository.findAllByLogin(login);
+
+        for(Flashcard flashcard : flashcardsByLogin){
+            flashcardsByLoginDto.add(flashcardConverter.convert(flashcard));
+        }
+
+        return flashcardsByLoginDto;
+    }
+
+    @Override
+    public List<FlashcardDto> findByLoginAndListName(String login, String listName) {
+        List<FlashcardDto> flashcardSets = new ArrayList<>();
+        Iterable<Flashcard> flashcardsByLoginAndListName = flashcardRepository.findByLoginAndListName(login, listName);
+
+        for(Flashcard flashcard : flashcardsByLoginAndListName){
+            flashcardSets.add(flashcardConverter.convert(flashcard));
+        }
+
+        return flashcardSets;
+    }
+
+    @Override
+    public FlashcardDto findById(Long id) {
+        return flashcardConverter.convert(flashcardRepository.findById(id).get());
+    }
 }

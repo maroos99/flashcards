@@ -13,6 +13,7 @@ public class FlashcardConverterImpl implements FlashcardConverter {
         flashcardDto.setUser(flashcard.getUser());
         flashcardDto.setWord(flashcard.getWord());
         flashcardDto.setWordTranslation(flashcard.getWordTranslation());
+        flashcardDto.setListName(flashcard.getListName());
 
         return flashcardDto;
     }

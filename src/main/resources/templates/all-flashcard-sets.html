@@ -13,6 +13,19 @@
 <div class = "container">
     <h1>All flashcard sets:</h1><br>
 
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th> Your flashcard sets: </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="listNameSet : ${listName}">
+            <td><a href = "#" th:href="@{one-flashcard-set(listName=${listNameSet})}"><span th:text="${listNameSet}"></span></a></td>
+        </tr>
+        </tbody>
+    </table>
+
     <br><br>
 
     <h4><a href = "#" th:href="logged-user">Back</a></h4><br>

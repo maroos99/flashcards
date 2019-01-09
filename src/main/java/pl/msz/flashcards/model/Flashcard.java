@@ -18,13 +18,17 @@ public class Flashcard {
     @JoinColumn(name="user_id")
     private User user;
 
+    @Column(name="list_name")
+    private String listName;
+
     public Flashcard() {
     }
 
-    public Flashcard(String word, String wordTranslation, User user) {
+    public Flashcard(String word, String wordTranslation, User user, String listName) {
         this.word = word;
         this.wordTranslation = wordTranslation;
         this.user = user;
+        this.listName = listName;
     }
 
     public Long getId() {
@@ -57,5 +61,13 @@ public class Flashcard {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getListName() {
+        return listName;
+    }
+
+    public void setListName(String listName) {
+        this.listName = listName;
     }
 }
