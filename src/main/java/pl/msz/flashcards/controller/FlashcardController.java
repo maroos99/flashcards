@@ -73,8 +73,12 @@ public class FlashcardController {
         model.put("flashcard", singleFlashcard);
         String login = authentication.getName();
         String listName = singleFlashcard.getListName();
+        Long previousId = flashcardRepository.findPreviousIdFlashcardByUserAndListName(login ,listName, id);
+        model.put("previousId", previousId);
         Long currentId = flashcardRepository.findNextIdFlashcardByUserAndListName(login, listName, id);
         model.put("currentId", currentId);
+
+
         return "single-flashcard";
     }
 }

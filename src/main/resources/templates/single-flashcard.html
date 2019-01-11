@@ -14,10 +14,16 @@
     <h1>Single Flashcard</h1><br>
 
     <h3><span th:text="${flashcard.word}"></span></h3>
-    <h3><span th:text="${flashcard.wordTranslation}"></span></h3>
+    <h3><span th:text="${flashcard.wordTranslation}"></span></h3><br>
 
-    <br><br>
-    <h4><a href = "#" th:href="@{'/single-flashcard/' + ${currentId}}">Next flashcard</a></h4><br>
+    <div class="checkbox">
+        <h4><label><input type="checkbox" value="">learned</label></h4>
+    </div><br>
+
+    <span th:if="${currentId != null}"><h4><a href = "#" th:href="@{'/single-flashcard/' + ${currentId}}">Next flashcard</a></h4><br></span>
+    <span th:unless="${currentId != null}"><h4>Next flashcard</h4><br></span>
+    <span th:if="${previousId != null}"><h4><a href = "#" th:href="@{'/single-flashcard/' + ${previousId}}">Previous flashcard</a></h4><br></span>
+    <span th:unless="${previousId !=null}"><h4>Previous flashcard</h4><br></span>
     <h4><a href = "#" th:href="@{/all-flashcard-sets}">Back</a></h4><br>
 
 
