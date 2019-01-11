@@ -21,15 +21,20 @@ public class Flashcard {
     @Column(name="list_name")
     private String listName;
 
+    @Column(name="status")
+    private boolean isLearned;
+
     public Flashcard() {
     }
 
-    public Flashcard(String word, String wordTranslation, User user, String listName) {
+    public Flashcard(String word, String wordTranslation, User user, String listName, boolean isLearned) {
         this.word = word;
         this.wordTranslation = wordTranslation;
         this.user = user;
         this.listName = listName;
+        this.isLearned = isLearned;
     }
+
 
     public Long getId() {
         return id;
@@ -69,5 +74,13 @@ public class Flashcard {
 
     public void setListName(String listName) {
         this.listName = listName;
+    }
+
+    public boolean isLearned() {
+        return isLearned;
+    }
+
+    public void setLearned(boolean learned) {
+        isLearned = learned;
     }
 }

@@ -21,11 +21,13 @@ public interface FlashcardRepository extends CrudRepository<Flashcard, Long> {
        @Query("SELECT MIN(f.id) FROM Flashcard f WHERE f.user.login = :login AND f.listName = :listName")
        Long findMinIdFlashcardByUserAndListName(@Param("login") String login, @Param("listName") String listName);
 
-       @Query("SELECT MIN(f.id) FROM Flashcard f WHERE f.user.login = :login AND f.listName = :listName AND f.id> :currentFlashcardId")
+       @Query("SELECT MIN(f.id) FROM Flashcard f WHERE f.user.login = :login AND f.listName = :listName AND f.id> :currentFlashcardId " +
+               "AND status = false")
        Long findNextIdFlashcardByUserAndListName(@Param("login") String login, @Param("listName") String listName,
                                                  @Param("currentFlashcardId") Long currentFlashcardId);
 
-       @Query("SELECT MAX(f.id) FROM Flashcard f WHERE f.user.login = :login AND f.listName = :listName AND f.id< :previousFlashcardId")
+       @Query("SELECT MAX(f.id) FROM Flashcard f WHERE f.user.login = :login AND f.listName = :listName AND f.id< :previousFlashcardId " +
+               "AND status = false")
        Long findPreviousIdFlashcardByUserAndListName(@Param("login") String login, @Param("listName") String listName,
                                                  @Param("previousFlashcardId") Long previousFlashcardId);
 }

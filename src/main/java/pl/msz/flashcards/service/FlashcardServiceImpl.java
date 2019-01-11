@@ -58,4 +58,12 @@ public class FlashcardServiceImpl implements FlashcardService{
     public FlashcardDto findById(Long id) {
         return flashcardConverter.convert(flashcardRepository.findById(id).get());
     }
+
+    //service nie powinien zwracac encji
+    @Override
+    public FlashcardDto save(FlashcardDto flashcardDto) {
+        Flashcard flashcardToSave = flashcardConverter.convertFlashcardDto(flashcardDto);
+        flashcardToSave=flashcardRepository.save(flashcardToSave);
+        return flashcardConverter.convert(flashcardToSave);
+    }
 }

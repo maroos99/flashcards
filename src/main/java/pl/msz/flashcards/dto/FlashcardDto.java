@@ -12,17 +12,19 @@ public class FlashcardDto {
     private String wordTranslation;
     private User user;
     private String listName;
+    private boolean isLearned;
 
 
     public FlashcardDto() {
     }
 
-    public FlashcardDto(Long id, String word, String wordTranslation, User user, String listName) {
+    public FlashcardDto(Long id, String word, String wordTranslation, User user, String listName, boolean isLearned) {
         this.id = id;
         this.word = word;
         this.wordTranslation = wordTranslation;
         this.user = user;
         this.listName = listName;
+        this.isLearned = isLearned;
     }
 
     public Long getId() {
@@ -63,5 +65,13 @@ public class FlashcardDto {
 
     public void setListName(String listName) {
         this.listName = listName;
+    }
+
+    public boolean isLearned() {
+        return isLearned;
+    }
+
+    public void setLearned(boolean learned) {
+        isLearned = learned;
     }
 }

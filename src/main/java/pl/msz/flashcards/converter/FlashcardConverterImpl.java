@@ -14,7 +14,21 @@ public class FlashcardConverterImpl implements FlashcardConverter {
         flashcardDto.setWord(flashcard.getWord());
         flashcardDto.setWordTranslation(flashcard.getWordTranslation());
         flashcardDto.setListName(flashcard.getListName());
+        flashcardDto.setLearned(flashcard.isLearned());
 
         return flashcardDto;
+    }
+
+    @Override
+    public Flashcard convertFlashcardDto(FlashcardDto flashcardDto) {
+        Flashcard flashcard = new Flashcard();
+        flashcard.setId(flashcard.getId());
+        flashcard.setUser(flashcard.getUser());
+        flashcard.setWord(flashcard.getWord());
+        flashcard.setWordTranslation(flashcard.getWordTranslation());
+        flashcard.setListName(flashcard.getListName());
+        flashcard.setLearned(flashcard.isLearned());
+
+        return flashcard;
     }
 }

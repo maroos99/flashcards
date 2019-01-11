@@ -6,4 +6,7 @@ import pl.msz.flashcards.model.Flashcard;
 public interface FlashcardConverter {
 
     FlashcardDto convert(Flashcard flashcard);
+
+    Flashcard convertFlashcardDto(FlashcardDto flashcardDto);
+
 }
